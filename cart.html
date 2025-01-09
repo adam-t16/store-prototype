@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Magasin de Hoodies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.jpeg" alt="Votre Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#featured-products">Acheter</a></li>
+                <li><a href="index.html#about">À propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="cart.html">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cart">
+            <h2>Votre Panier</h2>
+            <div class="cart-content">
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Magasin de Hoodies</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        window.onload = function () {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartContentElement = document.querySelector('.cart-content');
+
+            var total = 0;
+            cart.forEach(function (product, index) {
+                var productElement = document.createElement('div');
+                productElement.innerHTML = `
+        <img src="${product.productImage}" alt="${product.productName}">
+        <h3>${product.productName}</h3>
+        <div class="product-footer">
+            <button class="delete-button">Supprimer</button>
+            <p>${product.productPrice || 0} DH</p>
+        </div>
+    `;
+                productElement.querySelector('.delete-button').addEventListener('click', function () {
+                    cart.splice(index, 1);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    location.reload();
+                });
+                cartContentElement.appendChild(productElement);
+                total += product.productPrice;
+            });
+
+            var totalElement = document.createElement('p');
+            totalElement.textContent = 'Total : ' + total.toFixed(2) + ' DH';
+            cartContentElement.appendChild(totalElement);
+
+            var proceedButton = document.createElement('button');
+proceedButton.textContent = 'Passer à la caisse';
+proceedButton.addEventListener('click', function () {
+    cartContentElement.innerHTML = `
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc286tyP6vQpktDl4TlUj0GUZ4uMgU7uq8tq3ATSJ_ax18Ctw/viewform?embedded=true" 
+                width="640" height="1229" frameborder="0" marginheight="0" marginwidth="0">
+        Chargement…
+        </iframe>
+    `;
+});
+cartContentElement.appendChild(proceedButton);
+
+
+            updateCartCount();
+        };
+    </script>
+</body>
+
+</html>

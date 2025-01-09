@@ -1,0 +1,461 @@
+.product-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.delete-button {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #131313;
+  color: #d9d9d9;
+}
+
+header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+  background-color: rgba(34, 34, 34, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover,
+nav:hover .logo {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.logo img {
+  max-height: 40px;
+  border-radius: 10px;
+}
+
+nav {
+  background-color: rgba(34, 34, 34, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #d9d9d9;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+.hero {
+  background-image: linear-gradient(to right, rgba(34, 34, 34, 0.5), rgba(18, 18, 18, 0.3)), url('logo.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 150px 20px;
+  margin-top: 20px;
+  margin: 0 20px; 
+  text-align: center;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ffffff; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold; 
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ffffff; 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+
+.product-list {
+  padding: 40px 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.product-card {
+  background-color: rgba(35, 35, 35, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease; 
+}
+
+.product-card:hover {
+  background-color: rgba(56, 56, 56, 0.8);
+  transform: scale(1.05); 
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  transition: 0.3s ease; 
+}
+
+.product-card img {
+  max-width: 100%;
+  margin-top: 0.5%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 20px 0 10px;
+}
+
+.product-card p {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product-card button {
+  background-color: #d9d9d9;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.product-card button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+footer {
+  background-color: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  color: #d9d9d9;
+  padding: 20px;
+  margin: 0 20px;
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+#contact {
+  padding: 20px;
+  background-color: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  color: #d9d9d9;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-item {
+  flex: 1 1 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.info-item i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #d9d9d9;
+}
+
+.info-item p {
+  margin-bottom: 10px;
+  color: #d9d9d9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.info-item a {
+  color: #d9d9d9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+  color: #ffffff;
+}
+
+
+
+
+#about {
+  padding: 20px;
+  background-color: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  color: #d9d9d9;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+#about h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #d9d9d9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.cart-content {
+  padding: 20px;
+  background-color: rgba(34, 34, 34, 0.8);
+  backdrop-filter: blur(10px);
+  color: #d9d9d9;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.cart-content div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-content div img {
+  max-height: 100px;
+  border-radius: 10px;
+}
+
+.cart-content div h3 {
+  font-size: calc(1em + 1vw);
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.cart-content div p {
+  font-weight: bold;
+}
+
+.cart-content p {
+  text-align: right;
+  font-size: 1.2rem;
+}
+.cart-content button {
+  display: block;
+  margin: auto;
+  background-color: #d9d9d9;
+  color: #121212;
+  border: none;
+  font-size: medium;
+  padding: 12px; 
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-content button:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#cart h2 {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.cart-content div img {
+  max-height: 100px;
+  border-radius: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .cart-content div img {
+    max-height: 150px;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .cart-content div img {
+    max-height: 200px;
+  }
+}
+
+
+/* Cible uniquement la liste des icônes de réseaux sociaux */
+#contact .social-icons {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#contact .social-icons li {
+  list-style: none;
+  display: inline-block;
+  font-size: 23px;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.instagram{
+  border: 2px solid #ff0095;
+  color: #c72b7e;
+}
+
+.twitter{
+  border: 2px solid #1c9ff1;
+  color: #1c9ff1;
+}
+
+.youtube{
+  border: 2px solid #ff0000;
+  color: #ff0000;
+}
+
+.facebook{
+  border: 2px solid #0679e6;
+  color: #0679e6;
+}
+
+
+/* #####################  Hover EFFECTS ############################# */
+
+.icon{
+  transition: 0.6s;
+}
+
+li:hover .icon1{
+  transform: rotateY(360deg);
+  text-shadow: 0px 0px 1px #ff0095;
+}
+
+li:hover .icon2{
+  transform: rotateY(360deg);
+  text-shadow: 0px 0px 1px #1c9ff1;
+}
+
+li:hover .icon3{
+  transform: rotateY(360deg);
+  text-shadow: 0px 0px 1px #ff0000;
+}
+
+li:hover .icon4{
+  transform: rotateY(360deg);
+  text-shadow: 0px 0px 1px #0679e6;
+}
+
+li{
+  transition: 0.4s;
+  transition-delay: 0.2s;
+}
+
+.instagram:hover{
+  box-shadow: 0px 0px 7px #ff0095 inset,
+              0px 0px 7px #ff0095;
+}
+
+.twitter:hover{
+  box-shadow: 0px 0px 7px #1c9ff1 inset,
+              0px 0px 7px #1c9ff1;
+}
+
+.youtube:hover{
+  box-shadow: 0px 0px 7px #ff0000 inset,
+              0px 0px 7px #ff0000;
+}
+
+.facebook:hover{
+  box-shadow: 0px 0px 7px #0679e6 inset,
+              0px 0px 7px #0679e6;
+}
